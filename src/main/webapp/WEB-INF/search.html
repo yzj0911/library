@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css" th:href=@{bootstrap3/css/bootstrap.css}>
+<link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" th:href=@{bootstrap3/font-awesome-4.7.0/css/font-awesome.css}>
+<script type="text/javascript" src="../bootstrap3/jquery.min.js"th:src=@{bootstrap3/jquery.min.js}></script>
+<script type="text/javascript" src="../bootstrap3/js/bootstrap.js" th:src=@{bootstrap3/js/bootstrap.js}></script>
+<script type="text/javascript" src="../bootstrap3/js/holder.js" th:src=@{bootstrap3/js/holder.js}></script>
+<script type="text/javascript" src="../bootstrap3/js/html5shiv.min.js" th:src=@{bootstrap3/js/html5shiv.min.js}></script>
+<script type="text/javascript" src="../bootstrap3/js/css3-mediaqueries.js" th:src=@{bootstrap3/js/css3-mediaqueries.js}></script>
+<script type="text/javascript" src="../bootstrap3/js/respond.min.js" th:src=@{bootstrap3/js/respond.min.js}></script>
+</head>
+<body>	
+<form>
+<span class="glyphicon glyphicon glyphicon-search"></span>
+<input type="text" name="searchName"placeholder="请输入要查询的  作者名称" size=100>
+<button class="btn btn-info btn-xs" type="submit">查询</button>
+</form>
+<table class="table table-striped table-bordered table-hover  table-condensed text-center">
+  <thead>
+     <th th:text=${title.get(0).value}>序号</th>
+     <th th:text=${title.get(1).value}>封面</th>
+     <th th:text=${title.get(2).value}>图书名称</th>
+     <th th:text=${title.get(3).value}>作者</th>
+     <th th:text=${title.get(4).value}>出版社</th>
+     <th th:text=${title.get(5).value}>书刊分类</th>
+     <th th:text=${title.get(6).value}>总册数</th>
+     <th th:text=${title.get(7).value}>借出册数</th>
+     <th th:text=${title.get(8).value}>剩余册数</th>
+     <th th:text=${title.get(9).value}>借出次数</th>
+     <th th:text=${title.get(10).value}>书刊编号</th>
+  </thead>
+  <tbody>
+     <tr th:each="e:${book}">
+     	<td th:text=${e.id}>1</td>
+        <td class="thumbnail"><img width="100px" src="../imgs/book_1.jpeg"th:src=@{imgs/book_{num}.jpeg(num=${e.cover})}></td> 
+        <td th:text=${e.name}>傲世仙医</td> 
+        <td th:text=${e.author}>桥月仍在</td>
+        <td th:text=${e.publisher}>起点中文网</td>
+        <td th:text=${e.classify}>武侠仙侠</td>
+        <td th:text=${e.total}>35</td>
+        <td th:text=${e.lend}>20</td>
+        <td th:text=${e.left}>15</td>
+        <td th:text=${e.times}>345</td>
+        <td th:text=${e.number}>wx001</td>
+     </tr>
+  </tbody>
+</table>
+</body>
+</html>

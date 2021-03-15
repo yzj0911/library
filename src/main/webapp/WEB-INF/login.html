@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户名登陆</title>
+<link rel="stylesheet" type="text/css"
+  href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+  href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+<style type="text/css">
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+img {
+  position: absolute;
+/*   left: 20%; */
+width:100%;
+  top: 10%;
+}
+ div>div {
+ position: absolute;
+ left:45%;
+top:20%;
+} 
+
+</style>
+</head>
+<body>
+
+  <div>
+    <img alt="加载失败" src="../imgs/login.jpg" th:src="@{imgs/login.jpg}">
+    <div>
+      <h1>
+        <center>用户登陆</center>
+      </h1>
+      <form action="LoginServlet" method="get">
+        <table border="1" cellpadding="0">
+          <tr>
+            <td><span class="text-primary">用户名：</span></td>
+            <td><input  name="usrname"
+              type="text" placeholder="请输入用户名">
+          </tr>
+          <tr>
+            <td><span class="text-primary">密码：</span></td>
+            <td><input  name="password"
+              type="password" placeholder="请输入密码">
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><input type="submit"
+              value="登陆"></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+
+</body>
+</html>

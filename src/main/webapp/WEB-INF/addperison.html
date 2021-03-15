@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.css" th:href=@{bootstrap4/css/bootstrap.css}>
+<link rel="stylesheet" type="text/css" href="bootstrap4/font-awesome-4.7.0/css/font-awesome.css" th:href=@{bootstrap4/font-awesome-4.7.0/css/font-awesome.css}/>
+<style type="text/css">
+#dd{
+margin-top: 10px;
+}
+article{
+margin-top: 50px;
+}
+</style>
+</head>
+<body>
+<header>
+</header>
+<article>
+<div class=container>
+<div class=row>
+<div class=rol-md-6> 
+  <div class="bs-example" data-example-id="bordered-table">
+ <form action="AddServlet">
+<input type=text name=empno hidden=hidden>
+读者姓名:<input type=text name=name class="btn btn-default">
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别:<input type=text name=gender class="btn btn-default">
+<br><br><br>
+出生日期:<input type=text name=date class="btn btn-default">
+  <input type="submit" value="添加" class="btn btn-default"> 
+</form>
+  </div></div></div>
+</article>
+
+</body>
+<script type="text/javascript" src="bootstrap4/jquery.min.js" th:src=@{bootstrap4/jquery.min.js}></script>
+<script type="text/javascript" src="bootstrap4/js/bootstrap.js" th:src=@{bootstrap4/js/bootstrap.js}></script>
+<script type="text/javascript" src="bootstrap4/js/holder.js" th:src=@{bootstrap4/js/holder.js}></script>
+<script type="text/javascript" src="bootstrap4/js/html5shiv.min.js" th:src=@{bootstrap4/js/html5shiv.min.js}></script>
+<script type="text/javascript" src="bootstrap4/js/css3-mediaqueries.js" th:src=@{bootstrap4/js/css3-mediaqueries.js}></script>
+<script type="text/javascript" src="bootstrap4/js/respond.min.js" th:src=@{bootstrap4/js/respond.min.js}></script>
+<script type="text/javascript">
+$("li").click(function(){
+	$(this).addClass("active");
+	$(this).siblings().attr("class","")
+})
+</script>
+</html>

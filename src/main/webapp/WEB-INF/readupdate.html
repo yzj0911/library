@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.css" th:href=@{bootstrap4/css/bootstrap.css}>
+<link rel="stylesheet" type="text/css" href="bootstrap4/font-awesome-4.7.0/css/font-awesome.css" th:href=@{bootstrap4/font-awesome-4.7.0/css/font-awesome.css}/>
+<style type="text/css">
+#dd{
+margin-top: 10px;
+}
+article{
+margin-top: 50px;
+}
+</style>
+</head>
+<body>
+<header>
+<div class=container>
+<div class=row>
+<div class=rol-md-10>
+<ul class="nav nav-tabs" >
+<li role="presentation" id=dd>统一办证系统</li>
+  <li role="presentation" class="active" id=dd2><a href="#">首页</a></li>
+  <li role="presentation"><a href="http://www.baidu.com">关于</a></li>
+  <li role="presentation"><a href="http://wzga.wenzhou.gov.cn/">联系</a></li>
+  <li id=dddd role="presentation" class=pull-right><a href="#" >管理员</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</header>
+<article>
+<div class=container>
+<div class=row>
+
+<div class=rol-md-3> 
+  <div class="bs-example" data-example-id="bordered-table">
+    <table class="table table-bordered">
+      <thead>
+        <tr class=bg-warning>
+          <th class=bg-warning>读者编号</th >
+          <th class=bg-warning>姓名</th>
+          <th class=bg-warning>性别</th>
+          <th class=bg-warning>出生日期</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="e:${persons}">
+          <td th:text=${e.id}></td>
+          <td th:text=${e.name}></td>
+          <td th:text=${e.gender}>男</td>
+          <td th:text=${e.date}>1989-8-8</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+    <div class="btn btn-default"><span class="glyphicon glyphicon-plus"></span><a href=ShowAddServlet>&nbsp;添加</a></div>
+  </div></div></div>
+</article>
+</body>
+<script type="text/javscript" src="bootstrap4/jquery.min.js" th:src=@{bootstrap4/jquery.min.js}></script>
+<script type="text/javascript" src="bootstrap4/js/bootstrap.js" th:src=@{bootstrap4/js/bootstrap.js}></script>
+<script type="text/javascript" src="bootstrap4/js/holder.js" th:src=@{bootstrap4/js/holder.js}></script>
+<script type="text/javascript" src="bootstrap4/js/html5shiv.min.js" th:src=@{bootstrap4/js/html5shiv.min.js}></script>
+<script type="text/javascript" src="bootstrap4/js/css3-mediaqueries.js" th:src=@{bootstrap4/js/css3-mediaqueries.js}></script>
+<script type="text/javascript" src="bootstrap4/js/respond.min.js" th:src=@{bootstrap4/js/respond.min.js}></script>
+<script type="text/javascript">
+$("li").click(function(){
+	$(this).addClass("active");
+	$(this).siblings().attr("class","")
+})
+function wUpdate(){  
+    window.open('ShowAddServlet','_blank','width=700,height=550,left=800,top=300,menubar=no,toolbar=no,status=no,scrollbars=yes')  
+}   
+</script>
+</html>
